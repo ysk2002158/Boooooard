@@ -1,5 +1,6 @@
 import java.io.IOException;
 
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/Post")
-public class PostServret extends HttpServlet {
+public class PostServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -22,11 +23,14 @@ public class PostServret extends HttpServlet {
 		List<PostBean> PostBeanList = new ArrayList<>();
 		PostBean postBean = new PostBean();
 		postBean.setAuthor(getServletInfo());
+		postBean.setTitle(getServletInfo());
+		postBean.setBody(getServletInfo());
+		request.setAttribute("postBean", postBean);
 		
 		
-		request.getParameter("body", body);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("/layout.jsp");
-		dispatcher.forward(request, response);
-
+		
+		getSerbletContext().
+		 getRequestDispatcher("/layout.jsp")
+         .forward(request, response);
 	}
 }

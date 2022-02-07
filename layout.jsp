@@ -1,9 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8"
 	import="java.net.URLDecoder" import="java.util.*"
 	import="java.util.List" import="java.util.*"%>
-<%
-List<PostServret> list = (List<PostServret>) request.getAttribute("body");
-%>
+<jsp:useBean id="postBean" class="PostBean" scope="request" />
+
 
 <!DOCTYPE html>
 <html>
@@ -29,9 +28,10 @@ List<PostServret> list = (List<PostServret>) request.getAttribute("body");
 
 	</form>
 	<p>
-		<c:forEach var="item" items="${body}">
-			<c:out value="${body}" />
-		</c:forEach>
+	<%=postBean.getAuthor() %>
+	<%=postBean.getTitle() %>
+	<%=postBean.getBody() %>
+	
 	</p>
 
 </body>
