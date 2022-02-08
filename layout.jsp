@@ -11,7 +11,7 @@
 <title></title>
 </head>
 <body>
-	<form method="POST" action="servlet55/Post">
+	<form method="POST" action="servlet/Post">
 		掲示板
 		<dd>
 			<input name=author type=text size=10 />
