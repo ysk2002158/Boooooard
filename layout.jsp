@@ -1,38 +1,18 @@
-<%@ page contentType="text/html; charset=UTF-8"
-	import="java.net.URLDecoder" import="java.util.*"
-	import="java.util.List" import="java.util.*"%>
-<jsp:useBean id="postBean" class="PostBean" scope="request" />
-
-
-<!DOCTYPE html>
+<%@ page contentType="text/html; charset=UTF-8" %>
+<!DOCTYPE HTML>
 <html>
 <head>
-<meta charset="UTF-8">
-<title></title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/normalize.css">
+  <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
+  <title>掲示板</title>
 </head>
 <body>
-	<form method="POST" action="servlet/Post">
-		掲示板
-		<dd>
-			<input name=author type=text size=10 />
-			<p>
-				<input name=title type=text size=10 />
-			</p>
-			<p>
-				<textarea name=body rows=4 cols=40></textarea>
-			</p>
-			<p>
-				<input type="submit" value="投稿">
-			</p>
-		</dd>
-
-	</form>
-	<p>
-	<%=postBean.getAuthor() %>
-	<%=postBean.getTitle() %>
-	<%=postBean.getBody() %>
-	
-	</p>
-
+<div id="wrap">
+<jsp:include page="header.jsp" />
+<jsp:include page="main.jsp" />
+<jsp:include page="footer.jsp" />
+</div>
 </body>
 </html>
